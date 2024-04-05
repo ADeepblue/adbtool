@@ -42,7 +42,7 @@ if %Count%==0 (
 
         echo %%~xni
         
-        echo adb push "%%i" "%TargetPath%/%%~xni"
+        adb push "%%i" "%TargetPath%/%%~xni"
 
         REM parameter is a file.
         ) 
