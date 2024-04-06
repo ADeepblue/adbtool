@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 REM COUNT NUM
 set "Count=0"
 set "TargetPath=/sdcard/test"
@@ -24,19 +25,26 @@ if %Count%==0 (
     REM Input parameter is greater than 0
     
     for %%i in (%*) do (
-        echo %%i %%~i
+        REM echo %%i %%~i
         for %%a in ("%%~i") do set "b=%%~aa"
 
-    echo Line24 %b%
+    REM echo Line30 %b%
 
     if defined b (
     if "%b:~0,1%"=="d" (
+        set "folderPath=%%i"
+        echo %folderPath%
         
         REM parameter is a directory.
         
 
-        for %%f in ("%%~xni\*") do (
+        for /r "%folderpath%" %%f in (*) do (
             
+            echo %%f
+            set "relativePath=%%f"
+            echo %relativePath% Line44
+            set "relativePath=%relativePath:%folderpath%=%"
+            echo %relativePath% Line46
             echo adb push "%%~f" "%TargetPath%/%%~nxf"
 
         )
@@ -44,8 +52,8 @@ if %Count%==0 (
         ) else (
 
         REM echo %%~xni
-        
-        adb push "%%i" "%TargetPath%/%%~xni"
+
+        echo adb push "%%i" "%TargetPath%/%%~xni"
 
         REM parameter is a file.
         ) 
@@ -54,7 +62,7 @@ if %Count%==0 (
 )
 )
 
-adb shell find /sdcard/test/* -type f
+REM adb shell find /sdcard/test/* -type f
 REM only for test
 REM adb shell rm -rf /sdcard/test
 

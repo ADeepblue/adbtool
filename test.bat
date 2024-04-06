@@ -1,14 +1,10 @@
+for /F "tokens=*" %%a in ('type %FileName%') do call :Foo %%a
+goto End
 
+:Foo
+set z=%1
+echo %z%
+echo %1
+goto :eof
 
-@echo off
-
-::Define text as string
-set str=This is a test - because it can be
-
-::Remove string
-set str=%str: - because it can be=%
-
-::Echo result
-echo %str%
-
-pause
+:End
