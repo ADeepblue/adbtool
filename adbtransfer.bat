@@ -39,7 +39,7 @@ if %Count%==0 (
 
         for %%f in ("%%~xni\*") do (
             
-            echo adb push "%%~f" "%TargetPath%/%%~nxf"
+            adb push "%%~f" "%TargetPath%/%%~nxf"
 
         )
 
