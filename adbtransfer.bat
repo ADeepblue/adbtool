@@ -32,7 +32,7 @@ if %Count%==0 (
     echo Line24 %b%
 
     if defined b (
-    if "%b:~0,1%"==d (
+    if "%b:~0,1%"=="d" (
         
         REM parameter is a directory.
         
