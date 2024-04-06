@@ -14,12 +14,17 @@ for %%i in (%*) do (
 echo %Count%
 
 if %Count%==0 (
+    
+    REM input parameter equal to 0
     REM echo "Count%=0" 
+    
     goto :help
 ) else (
 
-    echo Line19
-
+    echo Line23
+    
+    REM Input parameter is greater than 0
+    
     for %%i in (%*) do (
         echo %%i %%~i
         for %%a in ("%%~i") do set "b=%%~aa"
@@ -34,13 +39,13 @@ if %Count%==0 (
 
         for %%f in ("%%~xni\*") do (
             
-            adb push "%%~f" "%TargetPath%/%%~nxf"
+            echo adb push "%%~f" "%TargetPath%/%%~nxf"
 
         )
 
         ) else (
 
-        echo %%~xni
+        REM echo %%~xni
         
         adb push "%%i" "%TargetPath%/%%~xni"
 
@@ -51,9 +56,9 @@ if %Count%==0 (
 )
 )
 
-
-
-
+adb shell find /sdcard/test/* -type f
+REM only for test
+REM adb shell rm -rf /sdcard/test
 
 
 pause
