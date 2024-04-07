@@ -20,8 +20,6 @@ if %Count%==0 (
     
     goto :help
 ) else (
-
-    echo Line23
     
     REM Input parameter is greater than 0
     
