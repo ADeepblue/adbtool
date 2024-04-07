@@ -54,7 +54,7 @@ if %Count%==0 (
 )
 )
 
-adb shell find /sdcard/test/* -type f
+REM adb shell find /sdcard/test/* -type f
 REM only for test
 REM adb shell rm -rf /sdcard/test
 
