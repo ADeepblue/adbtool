@@ -11,7 +11,7 @@ for %%i in (%*) do (
 
 
 
-echo %Count%
+REM echo %Count%
 
 if %Count%==0 (
     
@@ -24,10 +24,10 @@ if %Count%==0 (
     REM Input parameter is greater than 0
     
     for %%i in (%*) do (
-        echo %%i %%~i
+        REM echo %%i %%~i
         for %%a in ("%%~i") do set "b=%%~aa"
 
-    echo Line24 %b%
+    REM echo Line24 %b%
 
     if defined b (
     if "%b:~0,1%"=="d" (
@@ -65,3 +65,5 @@ exit /b 0
 
 :help
 echo 请将要传输的文件以参数的形式附在脚本后方，如adbtransfer.bat "file1" "file2"..."fileN"
+
+
