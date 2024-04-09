@@ -1,6 +1,5 @@
-REM Thisscript is developed by 深蓝之亘，主页链接 space_bilibili.com_435022639，欢迎支持，此脚本免费获得
 @echo off
-
+REM Thisscript is developed by 深蓝之亘，主页链接 space_bilibili.com_435022639，欢迎支持，此脚本免费获得
 set "ParameterNotIn="
 set "ParameterHelp="
 
